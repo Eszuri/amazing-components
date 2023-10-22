@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button></button>
+    <div></div>
+    <span></span>
+    <script>
+
+        // Variabel
+        let btn = document.querySelector('button');
+        let section = document.querySelector('section');
+        let div = document.querySelector('div');
+        let span = document.querySelector('span');
+        btn.textContent = "TEST";
+
+        // Style Css
+        btn.style.width = "150px";
+        btn.style.height = "50px";
+        btn.style.backgroundColor = "green";
+        btn.style.border = "none";
+        btn.style.borderRadius = "5px";
+        btn.style.cursor = "pointer";
+        btn.style.color = "white";
+        //
+        div.textContent = "ini adalah alert. edit kalimat ini terserah kalian"
+        div.style.width = "50%";
+        div.style.borderTopLeftRadius = "5px"
+        div.style.borderTopRightRadius = "5px"
+        div.style.height = "50px";
+        div.style.backgroundColor = "red";
+        div.style.display = "flex";
+        div.style.justifyContent = "center";
+        div.style.alignItems = "center";
+        div.style.color = "white";
+        div.style.fontSize = "18px";
+        div.style.fontWeight = '700';
+        div.style.fontFamily = "Arial";
+        div.style.position = "fixed";
+        div.style.top = -50 + "px";
+        div.style.right = 5 + "px";
+        div.style.transition = "0.5s"
+        //
+        span.style.width = "50%";
+        span.style.transition = "0.4s"
+        span.style.display = "inline-block";
+        span.style.height = "5px";
+        span.style.backgroundColor = "yellow";
+        span.style.position = "fixed";
+        span.style.top = -50 + "px";
+        span.style.right = 5 + "px";
+        // Event
+        btn.addEventListener("click", () => {
+            btn.disabled = true;
+            btn.style.cursor = "not-allowed"
+            div.style.transition = "0.5s"
+            span.style.transition = "0.4s"
+            span.style.top = 50 + "px";
+            div.style.top = 5 + "px";
+            setTimeout(() => {
+                span.style.transition = "2s";
+                span.style.width = "0%";
+            }, 500);
+            setTimeout(() => {
+                div.style.transition = "0.8s";
+                div.style.right = -1000 + "px";
+                span.style.right = -50 + "px";
+            }, 2500);
+            setTimeout(() => {
+                div.style.transition = "0s";
+                span.style.transition = "0s";
+                div.style.top = -50 + "px";
+                div.style.right = 5 + "px";
+                span.style.top = -50 + "px";
+                span.style.right = 5 + "px";
+                span.style.width = "50%";
+                btn.style.cursor = "pointer"
+                btn.disabled = false;
+            }, 2800);
+        });
+
+        btn.addEventListener("mouseover", () => {
+            btn.style.backgroundColor = "darkgreen"
+        });
+        btn.addEventListener("mouseout", () => {
+            btn.style.backgroundColor = "green"
+        });
+    </script>
+</body>
+
+</html>
